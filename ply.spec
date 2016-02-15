@@ -4,7 +4,7 @@
 #
 Name     : ply
 Version  : 3.8
-Release  : 14
+Release  : 15
 URL      : https://pypi.python.org/packages/source/p/ply/ply-3.8.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/ply/ply-3.8.tar.gz
 Summary  : Python Lex & Yacc
