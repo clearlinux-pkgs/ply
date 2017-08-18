@@ -4,7 +4,7 @@
 #
 Name     : ply
 Version  : 3.10
-Release  : 25
+Release  : 26
 URL      : http://pypi.debian.net/ply/ply-3.10.tar.gz
 Source0  : http://pypi.debian.net/ply/ply-3.10.tar.gz
 Summary  : Python Lex & Yacc
@@ -18,8 +18,15 @@ BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-This directory mostly contains tests for various types of error
-conditions.  To run:
+PLY is yet another implementation of lex and yacc for Python. Some notable
+        features include the fact that its implemented entirely in Python and it
+        uses LALR(1) parsing which is efficient and well suited for larger grammars.
+        
+        PLY provides most of the standard lex/yacc features including support for empty 
+        productions, precedence rules, error recovery, and support for ambiguous grammars. 
+        
+        PLY is extremely easy to use and provides very extensive error checking. 
+        It is compatible with both Python 2 and Python 3.
 
 %package python
 Summary: python components for the ply package.
@@ -33,20 +40,27 @@ python components for the ply package.
 %setup -q -n ply-3.10
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1487184112
+export SOURCE_DATE_EPOCH=1503072742
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487184112
+export SOURCE_DATE_EPOCH=1503072742
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
