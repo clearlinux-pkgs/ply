@@ -4,7 +4,7 @@
 #
 Name     : ply
 Version  : 3.11
-Release  : 33
+Release  : 34
 URL      : http://pypi.debian.net/ply/ply-3.11.tar.gz
 Source0  : http://pypi.debian.net/ply/ply-3.11.tar.gz
 Summary  : Python Lex & Yacc
