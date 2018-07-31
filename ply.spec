@@ -4,19 +4,15 @@
 #
 Name     : ply
 Version  : 3.11
-Release  : 36
-URL      : http://pypi.debian.net/ply/ply-3.11.tar.gz
-Source0  : http://pypi.debian.net/ply/ply-3.11.tar.gz
+Release  : 37
+URL      : https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz
 Summary  : Python Lex & Yacc
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: ply-python3
 Requires: ply-python
-BuildRequires : pbr
-BuildRequires : pip
-
-BuildRequires : python3-dev
-BuildRequires : setuptools
+BuildRequires : buildreq-distutils3
 
 %description
 PLY is yet another implementation of lex and yacc for Python. Some notable
@@ -55,7 +51,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1518816206
+export SOURCE_DATE_EPOCH=1533044125
 python3 setup.py build -b py3
 
 %install
