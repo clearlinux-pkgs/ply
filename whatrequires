@@ -1,2 +1,6 @@
 # This file contains recursive sources that require this package
+bind-utils
+jsonpath-rw
 libstoragemgmt
+pywbem
+vpp
