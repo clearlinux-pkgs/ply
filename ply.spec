@@ -4,7 +4,7 @@
 #
 Name     : ply
 Version  : 3.11
-Release  : 45
+Release  : 46
 URL      : https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz
 Summary  : Python Lex & Yacc
@@ -15,11 +15,15 @@ Requires: ply-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-Inspired by a September 14, 2006 Salon article "Why Johnny Can't Code" by
-David Brin (http://www.salon.com/tech/feature/2006/09/14/basic/index.html),
-I thought that a fully working BASIC interpreter might be an interesting,
-if not questionable, PLY example.  Uh, okay, so maybe it's just a bad idea,
-but in any case, here it is.
+PLY is yet another implementation of lex and yacc for Python. Some notable
+        features include the fact that its implemented entirely in Python and it
+        uses LALR(1) parsing which is efficient and well suited for larger grammars.
+        
+        PLY provides most of the standard lex/yacc features including support for empty 
+        productions, precedence rules, error recovery, and support for ambiguous grammars. 
+        
+        PLY is extremely easy to use and provides very extensive error checking. 
+        It is compatible with both Python 2 and Python 3.
 
 %package python
 Summary: python components for the ply package.
@@ -49,12 +53,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583202741
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603398918
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
